@@ -26,19 +26,24 @@
 
 //task3
 {
+    let count = 0;
+    let result = 0;
     let arr = [];
-    let i = 27;
-    for(; i < 57; i++){
-        arr.push(i)
+    for(let i = 27; i < 57; i++){
+        arr[count] = i;
+        result += arr[count];
+        count++;
     }
     console.log(arr)
+    console.log("Сумма элементов:", result);
+    //console.log("Сумма элементов:", arr.reduce((a,b)=> a + b));
     console.log("\n")
 
-    i = 26
+    let a = 26
     arr = []
-    while(i < 56){
-        i++;
-        arr.push(i)
+    while(a < 56){
+        a++;
+        arr.push(a)
     }
     console.log(arr)
     console.log("\n")
@@ -80,9 +85,9 @@
     }
 
     console.log(arr)
-    arr.push('Последний элемент');
+    arr.push('lastElem');
     console.log(arr)
-    console.log(arr[arr.length-1])
+    console.log("Последеий элемент: ",arr[arr.length-1])
     console.log("\n")
 }
 
@@ -96,17 +101,26 @@
     //     if(message === '') break;
     //     arr[i] = +message;
     // }
+    // console.log(arr);
     // arr.sort((a,b)=> a - b)
     // console.log(arr)
+    // console.log("\n")
 }
 
 //task8
 {
     let arr = [12, false, 'Текст', 4, 2, -5, 0]
+    console.log("Исходный массив:");
     
+    for(let i = 0; i<arr.length; i++){
+        console.log(arr[i])
+    }
+    console.log("\n")
+
     arr.reverse();
     let i = 0;
 
+    console.log("Перевернутый массив:");
     while(i < arr.length){
         console.log(arr[i++])
     }
@@ -118,6 +132,9 @@
 {
     let arr = [1, 2, 5, ,34, ,'sdf', 6,,'sdg', ,4]
     let count = 0; 
+
+    console.log("Массив: ", arr);
+
     for(let elem of arr){
         if(elem === undefined){
             count++;
@@ -132,6 +149,7 @@
     let lastNul;
     let arr = [12,4,2,0,2,45,23,54,32,0,12,4,0,22,21]
     let newArr = [];
+    console.log("Исходный массив:", arr)
     for(let i = 0; i < arr.length; i++){
         if(arr[i]===0){
             firstNul = arr.splice()
@@ -143,7 +161,7 @@
             lastNul = arr[i]
         }
     }
-    arr.slice(firstNul, lastNul)
+    arr.concat(firstNul, lastNul)
     console.log(arr)
     
 }
@@ -151,14 +169,14 @@
 
 //task11
 {
-    let getTriangle = () => {
-        let arr = [];
-        let sym = '^'
-        let len = +prompt("Введите длину треугольника");
-        for(let i = 0; i < len; i++){
-            arr[i] = sym;
-            document.write('<b>',arr.join(""),'<b/> </br>');
-        }
-    }
-    getTriangle();
+    // let getTriangle = () => {
+    //     let arr = [];
+    //     let sym = '^'
+    //     let len = +prompt("Введите длину треугольника");
+    //     for(let i = 0; i < len; i++){
+    //         arr[i] = sym;
+    //         document.write('<b>',arr.join(""),'<b/> </br>');
+    //     }
+    // }
+    // getTriangle();
 }
