@@ -20,6 +20,11 @@
             console.log(elem)
         }
     }
+
+    //alternative
+    // let newArr = arr.filter(item => item > -10 && item < -3)
+    // console.log(newArr)
+
     console.log("\n")
 }
 
@@ -53,10 +58,15 @@
 {
     let arr = ['10', '20', '30', '50', '235', '3000']
     for(let elem of arr){
-        if(elem[0] === '1' || elem[0] == '2' || elem[0] == '5'){
+        if(elem[0] === '1' || elem[0] === '2' || elem[0] === '5'){
             console.log(elem)
         }
     }
+
+    //alternative
+    // let newArr = arr.filter(item => item[0] === '1' || item[0] === '2' || item[0] === '5')
+    // console.log(newArr)
+    console.log("\n")
 }
 
 //task5 
@@ -71,7 +81,6 @@
             document.write(day, '<br/>')
         }
     }
-    console.log("\n")
 }
 
 //task6
@@ -94,17 +103,27 @@
 
 //task7
 {
-    // let message;
-    // let arr = [];
-    // for(let i = 0; ;i++){
-    //     message = prompt('Введите элемент массива');
-    //     if(message === '') break;
-    //     arr[i] = +message;
-    // }
-    // console.log(arr);
-    // arr.sort((a,b)=> a - b)
-    // console.log(arr)
-    // console.log("\n")
+    let message;
+    let arr = [];
+
+    for(let i = 0; ;i++){
+        message = prompt('Введите элемент массива');
+        
+        if(message === '') break;
+        
+        if(isNaN(message)){
+            alert("Введите число");
+            continue;
+        }
+        arr.push(+message);
+    }
+
+    console.log(arr);
+
+    arr.sort((a,b)=> a - b)
+
+    console.log(arr)
+    console.log("\n")
 }
 
 //task8
@@ -130,7 +149,7 @@
 
 //task9
 {
-    let arr = [1, 2, 5, ,34, ,'sdf', 6,,'sdg', ,4]
+    let arr = [1, 2, 5, ,34, ,'sdf', 6,,'34', ,4]
     let count = 0; 
 
     console.log("Массив: ", arr);
@@ -140,43 +159,64 @@
             count++;
         }
     }
+
     console.log("Количество пустых элементов = "+ count)
 }
 
 //task10 
 {
-    let firstNul;
-    let lastNul;
-    let arr = [12,4,2,0,2,45,23,54,32,0,12,4,0,22,21]
-    let newArr = [];
+    let firstNull;
+    let lastNull;
+    let arr = [12,4,2,0,2,45,23,54,32,0,12,1,0,22,21];
+    let sum = 0;
+    
     console.log("Исходный массив:", arr)
+
     for(let i = 0; i < arr.length; i++){
         if(arr[i]===0){
-            firstNul = arr.splice()
+            firstNull = i;
+            break;
         }
     }
     
     for(let i = arr.length; i > 0; i--){
         if(arr[i]===0){
-            lastNul = arr[i]
+            lastNull = i;
+            break;
         }
     }
-    arr.concat(firstNul, lastNul)
-    console.log(arr)
+
+    if(firstNull === undefined || lastNull === undefined) console.log(0);
+    else {
+        for(let i = firstNull+1; i < lastNull; i++){
+             sum += arr[i]
+        }
+    }
+
+    console.log("Сумма элементов между 2 нулями: ", sum);
+
+
+    //alternative
+
+    // let arr = [12,4,2,0,2,45,23,54,32,0,12,1,0,22,21]
+    // let newArr = [];
+    // let sum = 0;
+    // console.log("Исходный массив:", arr)
+    // let firstNull = arr.indexOf(0);
+    // let lastNull = arr.lastIndexOf(0)
+    // try{
+    //     newArr = arr.slice(firstNull+1, lastNull);
+    //     sum = newArr.reduce((acc, item) => acc+item);   
+    // }
+    // catch{}
+    // console.log("Сумма элементов между 2 нулями: ", sum);
+
+    
     
 }
 
 
 //task11
 {
-    // let getTriangle = () => {
-    //     let arr = [];
-    //     let sym = '^'
-    //     let len = +prompt("Введите длину треугольника");
-    //     for(let i = 0; i < len; i++){
-    //         arr[i] = sym;
-    //         document.write('<b>',arr.join(""),'<b/> </br>');
-    //     }
-    // }
-    // getTriangle();
+    
 }
