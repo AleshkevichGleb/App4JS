@@ -31,13 +31,11 @@
 
 //task3
 {
-    let count = 0;
     let result = 0;
     let arr = [];
     for(let i = 27; i < 57; i++){
-        arr[count] = i;
-        result += arr[count];
-        count++;
+        arr.push(i);
+        result += i;
     }
     console.log(arr)
     console.log("Сумма элементов:", result);
@@ -206,10 +204,12 @@
     // let lastNull = arr.lastIndexOf(0)
     // try{
     //     newArr = arr.slice(firstNull+1, lastNull);
-    //     sum = newArr.reduce((acc, item) => acc+item);   
+    //     sum = newArr.reduce((acc, item) => acc+item); 
+    //     console.log("Сумма элементов между 2 нулями: ", sum);  
     // }
-    // catch{}
-    // console.log("Сумма элементов между 2 нулями: ", sum);
+    // catch{
+    //     console.log(0)
+    // }
 
     
     
